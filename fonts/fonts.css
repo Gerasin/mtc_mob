@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "TruthCUR-Bold";
+	src: url("truthcyr-bold.eot");
+	src: url("truthcyr-bold.eot#iefix") format("embedded-opentype"),
+	url("truthcyr-bold.woff") format("woff"),
+	url("truthcyr-bold.ttf") format("truetype"),
+	url("truthcyr-bold.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "TruthCYR-Regular";
+	src: url("truthcyr-regular.eot");
+	src: url("truthcyr-regular.eot#iefix") format("embedded-opentype"),
+	url("truthcyr-regular.woff") format("woff"),
+	url("truthcyr-regular.ttf") format("truetype"),
+	url("truthcyr-regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "TruthCUR-Light";
+	src: url("truthcyr-light.eot");
+	src: url("truthcyr-light.eot#iefix") format("embedded-opentype"),
+	url("truthcyr-light.woff") format("woff"),
+	url("truthcyr-light.ttf") format("truetype"),
+	url("truthcyr-light.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}

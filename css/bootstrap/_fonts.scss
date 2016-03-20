@@ -1,0 +1,15 @@
+/*	-------------------------------------------------
+	Подключаем нестандартные шрифты | Custom fonts
+	------------------------------------------------- */
+@font-face {
+    font-family: 'TruthCYR_Regular';
+    src: url('../fonts/truthcyr-regular.eot');
+    src: url('../fonts/truthcyr-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/truthcyr-regular.woff2') format('woff2'),
+         url('../fonts/truthcyr-regular.woff') format('woff'),
+         url('../fonts/truthcyr-regular.ttf') format('truetype'),
+         url('../fonts/truthcyr-regular.svg#truthcyr_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
