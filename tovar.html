@@ -22,6 +22,9 @@
     <script type="text/javascript" src="js/fotorama.dev.js"></script>
     <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="js/jquery.carousel.js"></script>
+    <!-- Add fancyBox -->
+	<link rel="stylesheet" href="source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="source/jquery.fancybox.pack.js?v=2.1.5"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <!--[if lte IE 9]><script type="text/javascript" src="js/jquery.placeholder.js"></script><![endif]-->
 
@@ -51,8 +54,10 @@
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
@@ -63,7 +68,15 @@
 			<div class="text-page">
 				<div class="phone-cat">
 					<div class="phone-cat-i">
-						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a></div>
+						<div class="phone-img"><a class="fancybox" rel="group" href="img/img/img-2.jpg"><img src="img/img/img-2.jpg" alt=""></a>
+							<div class="phone-lnk_all"><a href="">4 фото</a></div>
+							<div class="phone_all">
+								<div class="phone_all-item"><a class="fancybox" rel="group" href="img/img/img-1.jpg"><img src="img/img/img-1.jpg" alt=""></a></div>
+								<div class="phone_all-item"><a class="fancybox" rel="group" href="img/tovar/phone-01.png"><img src="img/tovar/phone-1.png" alt=""></a></div>
+								<div class="phone_all-item"><a class="fancybox" rel="group" href="img/tovar/phone-02png"><img src="img/tovar/phone-2.png" alt=""></a></div>
+								<div class="phone_all-item"><a class="fancybox" rel="group" href="img/tovar/phone-03.png"><img src="img/tovar/phone-3.png" alt=""></a></div>
+							</div>
+						</div>
 						<div class="phone-info">
 							<a href="" class="favorites"></a>
 							<p class="catalog_tovar_raiting"><input type="hidden" name="val" value="3"></p>
@@ -96,20 +109,72 @@
 							В рассрочку <span>от</span> 986 000 <span>руб.</span>
 						</div>
 						<div class="condition-cont">
+							<div class="payment_installments">
+								Период рассрочки: 
+								<span class="payment-select">
+									<a href="" class="payment-select--h">12 месяцев</a>
+									<span class="payment-items">
+										<span class="payment-i active">12 месяцев</span>
+										<span class="payment-i">8 месяцев</span>
+										<span class="payment-i">6 месяцев</span>
+										<span class="payment-i">3 месяцев</span>
+									</span>
+								</span>
+							</div>
 							<p></p>
+							
 							<div class="tovar-detal-busket">
 								<a href="" class="button-style">В корзину</a>
 								<p><a href="">Условия рассрочки</a></p>
 							</div>
-							<div class="tovar-detal-pay">
-								<p>
-									1-й платеж
-									<span class="pay-box">0 <em>руб.</em></span>
-								</p>
-								<p>
-									Ежемесячный платеж
-									<span class="pay-box">353 000 <em>руб.</em></span>
-								</p>
+
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">379 000 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">353 000 <em>руб.</em></span>
+									</p>
+								</div>
+							</div>
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">706 000 <em>руб.</em></span>
+									</p>
+								</div>
+							</div>
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">1059 000 <em>руб.</em></span>
+									</p>
+								</div>
+							</div>
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">1412 000 <em>руб.</em></span>
+									</p>
+								</div>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -137,27 +202,73 @@
 					<div class="condition-item">
 						<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
 						<div class="condition-h">
-							Акция в рассрочку 200 000 <span>руб./мес.</span>
+							Акция в рассрочку <span>от</span> 986 000 <span>руб.</span>
 						</div>
 						<div class="condition-cont">
+							<div class="payment_installments">
+								Период рассрочки: 
+								<span class="payment-select">
+									<a href="" class="payment-select--h">12 месяцев</a>
+									<span class="payment-items">
+										<span class="payment-i active">12 месяцев</span>
+										<span class="payment-i">7 месяцев</span>
+									</span>
+								</span>
+							</div>
 							<p></p>
+							
 							<div class="tovar-detal-busket">
 								<a href="" class="button-style">В корзину</a>
-								<p><a href="">Условия акции в <br> рассрочку</a></p>
+								<p><a href="">Условия акции в<br> рассрочку</a></p>
 							</div>
-							<div class="tovar-detal-pay">
-								<p>
-									1-й платеж
-									<span class="pay-box">100 000 <em>руб.</em></span>
-								</p>
-								<p>
-									Ежемесячный платеж
-									<span class="pay-box">200 000 <em>руб.</em></span>
-								</p>
-								<p>
-									Акционная цена
-									<span class="pay-box">3 590 000 <em>руб.</em></span>
-								</p>
+
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">353 000 <em>руб.</em></span>
+									</p>
+								</div>
+							</div>
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">706 000 <em>руб.</em></span>
+									</p>
+								</div>
+							</div>
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">1059 000 <em>руб.</em></span>
+									</p>
+								</div>
+							</div>
+							<div class="payment_installments--tab">
+								<div class="tovar-detal-pay">
+									<p>
+										1-й платеж
+										<span class="pay-box">0 <em>руб.</em></span>
+									</p>
+									<p>
+										Ежемесячный платеж
+										<span class="pay-box">1412 000 <em>руб.</em></span>
+									</p>
+								</div>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -229,7 +340,7 @@
 						</div>
 						<div class="condition-cont">
 							<p></p>
-							<div class="buttin-other"><a href="" class="button-style">Оставить свой отзыв</a></div>
+							<div class="buttin-other"><a href="" class="button-style other_form--btn">Оставить свой отзыв</a></div>
 							<div class="other-cont">
 								<div class="other-date">23 марта 2014 в 12:54</div>
 								<div class="other-user">Codemaster</div>
@@ -239,7 +350,7 @@
 								<p class="other-ok"><img src="img/ico/result-ok.gif" alt="" class="other-ico">Космический дизайн и экран. Качество сборки. Эталон стиля. Стабильная работа. Отличная камера.</p>
 								<p class="other-no"><img src="img/ico/result-no.gif" alt="" class="other-ico">Выпирающая камера. Все-таки считаю, что мы, как эпл' овские наркоманы, все-таки прилично за него переплачиваем... но того стоит</p>
 							</div>
-							<div class="other-cont last">
+							<div class="other-cont">
 								<div class="other-date">23 марта 2014 в 12:54</div>
 								<div class="other-user">Максим</div>
 								<h3>все-таки он лучший</h3>
@@ -257,7 +368,56 @@
 									2. Без чехла разбить в 2 счета, оригинальный кожаный чехол хоть и крут, но очень дорог (45 eur)
 								</p>
 							</div>
-							<div class="buttin-other"><a href="" class="button-style">Оставить свой отзыв</a></div>
+							<div class="other_form">
+								<form action="">
+									<h3>Оставьте свой отзыв</h3>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-1">Эл. почта <em class="important" >*</em></label>
+											<input id="id-1" type="text" value="">
+										</fieldset>
+									</div>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-2">Имя</label>
+											<input id="id-2" type="text" value="">
+										</fieldset>
+									</div>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-3">Ваша оценка</label>
+											<p class="raiting-big"><input type="hidden" name="val" value="3"></p>
+										</fieldset>
+									</div>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-4">Заголовок отзыва (до 150 символов)</label>
+											<input id="id-4" type="text" value="">
+										</fieldset>
+									</div>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-5">Отзыв <em class="important">*</em></label>
+											<input id="id-5" type="text" value="">
+										</fieldset>
+									</div>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-6">Плюсы (до 200 символов)  <em class="important">*</em></label>
+											<img src="img/ico/result-ok.gif" class="result-ok" alt="">
+											<input id="id-6" type="text" value="">
+										</fieldset>
+									</div>
+									<div class="form-box">
+										<fieldset>
+											<label for="id-7">Минусы (до 200 символов)  <em class="important">*</em></label>
+											<img src="img/ico/result-no.gif" class="result-no" alt="">
+											<input id="id-7" type="text" value="">
+										</fieldset>
+									</div>
+									<div class="form-button"><input type="submit" class="button-style" value="Оставить свой отзыв"></div>
+								</form>
+							</div>
 						</div>
 					</div>
 					<div class="condition-item">
@@ -267,14 +427,30 @@
 						</div>
 						<div class="condition-cont">
 							<h3>Минск</h3>
-							<table class="tovar-detal-table" cellpadding="0" cellspacing="0">
+							<div class="tovar-select">
+								<div class="select-wrapper big-size">
+									<select>
+										<option value="">Минский район</option>
+										<option value="">Минский район</option>
+										<option value="">Минский район</option>
+										<option value="">Минский район</option>
+									</select>
+								</div>
+							</div>
+							<div class="tovar-select">
+								<div class="select-wrapper big-size">
+									<select>
+										<option value="">Минск</option>
+										<option value="">Минск</option>
+										<option value="">Минск</option>
+										<option value="">Минск</option>
+									</select>
+								</div>
+							</div>
+							<table class="tovar-detal-table availability-table" cellpadding="0" cellspacing="0">
 								<tr>
 									<th><span><a href="">Аэропорт "Минск-2"</a></span><div class="click-work">9.00 - 21.00</div></th>
 									<td><span><img src="img/ico/ico-ok.png" class="availability-ico" alt=""></span></td>
-								</tr>
-								<tr>
-									<th><span><a href="">Долгиновский тракт, 178, ТЦ "ALL"</a></span><div class="click-work">9.00 - 21.00</div></th>
-									<td><span><img src="img/ico/ico-none.png" class="availability-ico" alt=""></span></td>
 								</tr>
 								<tr>
 									<th><span><a href="">Интернет-магазин</a></span><div class="click-work">9.00 - 21.00</div></th>
@@ -291,10 +467,6 @@
 								<tr>
 									<th><span><a href="">Аэропорт "Минск-2"</a></span><div class="click-work">9.00 - 21.00</div></th>
 									<td><span><img src="img/ico/ico-ok.png" class="availability-ico" alt=""></span></td>
-								</tr>
-								<tr>
-									<th><span><a href="">Долгиновский тракт, 178, ТЦ "ALL"</a></span><div class="click-work">9.00 - 21.00</div></th>
-									<td><span><img src="img/ico/ico-none.png" class="availability-ico" alt=""></span></td>
 								</tr>
 								<tr>
 									<th><span><a href="">Интернет-магазин</a></span><div class="click-work">9.00 - 21.00</div></th>
@@ -332,6 +504,15 @@
 								</li>
 							</ul>
 						</div>
+					</div>
+					<div class="tovar_soc">
+						Понравился мобильный телефон? <br>
+						Расскажи друзьям!
+						<ul class="tovar_soc_lnk">
+							<li><a href="" class="lnk_vk"></a></li>
+							<li><a href="" class="lnk_tw"></a></li>
+							<li><a href="" class="lnk_fb"></a></li>
+						</ul>
 					</div>
 				</div>
 				<div class="pager-lnk">

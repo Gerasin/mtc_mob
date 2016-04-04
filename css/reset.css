@@ -212,14 +212,16 @@ input[type='radio'] {
     height: 14px;
     margin: 0 6px 0 -20px; }
   input[type='checkbox'] + label:before {
-    background-repeat: no-repeat;
-    background-position: 0 0; }
+    background-repeat: no-repeat; margin-top: -2px;
+    background-position: 0 0; 
+    width: 18px;
+    height: 18px}
   input[type='checkbox'] + label:hover:before {
     background-position: 0 0px; }
   input[type='checkbox']:checked + label:before {
-    background-position: 0 -16px; }
+    background-position: 0 -21px; }
   input[type='checkbox']:checked + label:hover:before{
-    background-position: 0 -16px; }
+    background-position: 0 -21px; }
 
 input[type='checkbox'] + label:before {
   background-image: url("../img/ico/checkbox.gif"); }
@@ -236,6 +238,7 @@ input[type='radio'] + label:before {width: 16px; height: 16px;
     background-position: 0 -17px; }
   input[type='radio']:checked + label:hover:before {
     background-position: 0 -17px; }
+      input[type='radio']:checked + label {color: #e41317;}
 
 .pseudo-input {
   -webkit-box-sizing: border-box;

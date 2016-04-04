@@ -51,8 +51,10 @@
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
@@ -61,79 +63,81 @@
 			</div>
 			<div class="h2">Регистрация</div>
 			<div class="text-page-bg">
-				<div class="form-page">
-					<div class="form-box">
-						<div class="select-wrapper big-size">
-							<select>
-								<option value="">Физическое лицо</option>
-							</select>
+				<form action="">
+					<div class="form-page">
+						<div class="form-box">
+							<div class="select-wrapper big-size">
+								<select>
+									<option value="">Физическое лицо</option>
+								</select>
+							</div>
 						</div>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-1">Имя <em class="important" >*</em></label>
+								<input id="id-1" type="text" value="">
+								<p class="error-message">Укажите ваше имя</p>
+							</fieldset>
+						</div>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-2">Фамилия <em class="important" >*</em></label>
+								<input id="id-2" type="text" value="">
+								<p class="error-message">Укажите вашу фамилию</p>
+							</fieldset>
+						</div>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-3">Отчество</label>
+								<input id="id-3" type="text" value="">
+							</fieldset>
+						</div>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-4">Электронная почта <em class="important" >*</em></label>
+								<input id="id-4" type="text" value="">
+								<p class="error-message">Укажите вашу электронную почту</p>
+							</fieldset>
+						</div>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-2">Дата рождения <em class="important" >*</em></label>
+								<div class="date-select-1 select-wrapper big-size">
+									<select>
+										<option value="">День</option>
+										<option value="">12</option>
+									</select>
+								</div>
+								<div class="date-select-2 select-wrapper big-size">
+									<select>
+										<option value="">Месяц</option>
+										<option value="">Сентября</option>
+									</select>
+								</div>
+								<div class="date-select-3 select-wrapper big-size">
+									<select>
+										<option value="">Год</option>
+										<option value="">1988</option>
+									</select>
+								</div>
+								<div class="clear"></div>
+							</fieldset>
+						</div>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-5">Введите символы с картинки <em class="important" >*</em></label>
+								<div class="capcha"><img src="img/capcha.gif" alt=""></div>
+								<input id="id-5" type="text" value="">
+								<p class="error-message">Укажите вашу электронную почту</p>
+							</fieldset>
+						</div>
+						<div class="form-box-check checkbox">
+							<input type="checkbox" id="id-check">
+							<label for="id-check">Получать анонсы и обзоры материалов на указанную электронную почту</label>
+						</div>
+						<div class="form-button"><input type="submit" class="button-style" value="Зарегистрироваться"></div>
 					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-1">Имя <em class="important" >*</em></label>
-							<input id="id-1" type="text" value="">
-							<p class="error-message">Укажите ваше имя</p>
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-2">Фамилия <em class="important" >*</em></label>
-							<input id="id-2" type="text" value="">
-							<p class="error-message">Укажите вашу фамилию</p>
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-3">Отчество</label>
-							<input id="id-3" type="text" value="">
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-4">Электронная почта <em class="important" >*</em></label>
-							<input id="id-4" type="text" value="">
-							<p class="error-message">Укажите вашу электронную почту</p>
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-2">Дата рождения <em class="important" >*</em></label>
-							<div class="date-select-1 select-wrapper big-size">
-								<select>
-									<option value="">День</option>
-									<option value="">12</option>
-								</select>
-							</div>
-							<div class="date-select-2 select-wrapper big-size">
-								<select>
-									<option value="">Месяц</option>
-									<option value="">Сентября</option>
-								</select>
-							</div>
-							<div class="date-select-3 select-wrapper big-size">
-								<select>
-									<option value="">Год</option>
-									<option value="">1988</option>
-								</select>
-							</div>
-							<div class="clear"></div>
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-5">Введите символы с картинки <em class="important" >*</em></label>
-							<div class="capcha"><img src="img/capcha.gif" alt=""></div>
-							<input id="id-5" type="text" value="">
-							<p class="error-message">Укажите вашу электронную почту</p>
-						</fieldset>
-					</div>
-					<div class="form-box-check checkbox">
-						<input type="checkbox" id="id-check">
-						<label for="id-check">Получать анонсы и обзоры материалов на указанную электронную почту</label>
-					</div>
-					<div class="form-button"><a href="" class="button-style">Зарегистрироваться</a></div>
-				</div>
+				</form>
 			</div>
 			<div class="contacs">
 				<div class="contacs-phone">+375 29 545-00-00</div>

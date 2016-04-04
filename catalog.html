@@ -22,6 +22,7 @@
     <script type="text/javascript" src="js/fotorama.dev.js"></script>
     <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="js/jquery.carousel.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <!--[if lte IE 9]><script type="text/javascript" src="js/jquery.placeholder.js"></script><![endif]-->
 
@@ -51,8 +52,10 @@
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
@@ -64,24 +67,28 @@
 				<div class="button-sort">
 					<a href="" class="button-lnk">Сортировать товары <img src="img/px.gif" alt=""></a>
 					<ul>
-						<li><a href="">По алфавиту</a></li>
+						<li class="active"><a href="">По алфавиту</a></li>
 						<li><a href="">По цене</a></li>
 						<li><a href="">По популярности</a></li>
 						<li><a href="">По рейтингу</a></li>
 					</ul>
 				</div>
-				<div class="button-view">
-					<a href="" class='view-1'></a>
-					<span class='view-2 active'></span>
+			</div>
+			<div class="button-nav">
+				<div class="clearfix"></div>
+				<div class="button-filt">
+					<a href="" class="button-filt-lnk">Фильтровать товары <img src="img/px.gif" alt=""></a>
 				</div>
 			</div>
+
 			<div class="text-page">
 				<div class="phone-cat">
 					<div class="phone-cat-i">
 						<div class="phone-header"><a href="">Alcatel ONETOUCH M'Pop (5020X) черный <em class="ico-pointer"></em></a></div>
-						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a></div>
+						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a>
+							<div class="stiker pre_order">Предзаказ</div>
+						</div>
 						<div class="phone-info">
-							<a href="" class="favorites"></a>
 							<p>
 								<span class="pay-box">986 000 <em>руб.</em></span>
 							</p>
@@ -106,9 +113,10 @@
 					</div>
 					<div class="phone-cat-i">
 						<div class="phone-header"><a href="">Alcatel ONETOUCH M'Pop (5020X) черный <em class="ico-pointer"></em></a></div>
-						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a></div>
+						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a>
+							<div class="stiker stiker_new">Новинка</div>
+						</div>
 						<div class="phone-info">
-							<a href="" class="favorites"></a>
 							<p>
 								<span class="pay-box">986 000 <em>руб.</em></span>
 							</p>
@@ -131,9 +139,10 @@
 					</div>
 					<div class="phone-cat-i">
 						<div class="phone-header"><a href="">HTC Desire 601 черный <em class="ico-pointer"></em></a></div>
-						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a></div>
+						<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a>
+							<div class="stiker stiker_stock">Акция</div>
+						</div>
 						<div class="phone-info">
-							<a href="" class="favorites"></a>
 							<p>
 								<span class="pay-box">2 986 000 <em>руб.</em></span>
 							</p>
@@ -153,7 +162,6 @@
 								</div>
 								<div class="availability availability-line">
 									<div class="availability-no"><img src="img/ico/availability-no.png" alt=""><span>Сообщить<br> о появлении</span></img></div>
-									<div class="availability-ok"><img src="img/ico/availability-ok.png" alt=""><span>Сообщим<br> о появлении</span></img></div>
 								</div>
 							</div>
 						</div>
@@ -208,6 +216,149 @@
 	<div class="srovneniyu-lnk">
 		<a href="" class="srovneniyu-close"></a>
 		<img src="img/ico/srovneniyu-white.png" alt=""><a href="">Сравнить <span>2</span> товара</a>
+	</div>
+
+	<div class="filter_catalog">
+        <form class="aside-filtr">
+        	<fieldset>
+                <div class="columns-view">
+                    <div>
+                        <p><input type="checkbox" id="param-18" value="" /><label for="param-18">Акция</label></p>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <p class="fieldset-title">Диагональ экрана (")</p>
+                <div class="range">
+                    <div class="range-fields">
+                        <div class="pseudo-input">
+                            <span class="pseudo-input_placeholder">От</span>
+                            <input type="text" value="" class="pseudo-input_field range-min_input range_inputs" />
+                        </div>
+                        -
+                        <div class="pseudo-input">
+                            <span class="pseudo-input_placeholder">до</span>
+                            <input type="text" value="" class="pseudo-input_field range-max_input range_inputs" />
+                        </div>
+                    </div>
+                    <div class="range-line_wrapper">
+                        <div class="range-line" data-min="2" data-max="6"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <p class="fieldset-title">Опции</p>
+                <div class="columns-view">
+                    <div style="width: 100%;">
+                        <p><input type="checkbox" id="param-15" value="" /><label for="param-15">2 SIM-карты</label></p>
+                        <p><input type="checkbox" id="param-16" value="" /><label for="param-16">Поддержка 4G</label></p>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <p class="fieldset-title">Производитель</p>
+                <div class="columns-view">
+                    <div>
+                        <p><input type="checkbox" id="param-1" value="" /><label for="param-1">Alcatel</label></p>
+                        <p><input type="checkbox" id="param-2" value="" /><label for="param-2">Apple</label></p>
+                        <p><input type="checkbox" id="param-4" value="" /><label for="param-4">Honor</label></p>
+                        <p><input type="checkbox" id="param-5" value="" /><label for="param-5">HTC</label></p>
+                        <p><input type="checkbox" id="param-6" value="" /><label for="param-6">Huawei</label></p>
+                        <p><input type="checkbox" id="param-7" value="" /><label for="param-7">Lenovo</label></p>
+                        <p><input type="checkbox" id="param-71" value="" /><label for="param-71">LG</label></p>
+                        <p><input type="checkbox" id="param-72" value="" /><label for="param-72">Microsoft</label></p>
+                    </div>
+                    <div>
+                        <p><input type="checkbox" id="param-8" value="" /><label for="param-8">Nokia</label></p>
+                        <p><input type="checkbox" id="param-9" value="" /><label for="param-9">Philips</label></p>
+                        <p><input type="checkbox" id="param-10" value="" /><label for="param-10">Prestigio</label></p>
+                        <p><input type="checkbox" id="param-11" value="" /><label for="param-11">QUMO</label></p>
+                        <p><input type="checkbox" id="param-12" value="" /><label for="param-12">Samsung</label></p>
+                        <p><input type="checkbox" id="param-13" value="" /><label for="param-13">Sony</label></p>
+                        <p><input type="checkbox" id="param-131" value="" /><label for="param-131">ZTE</label></p>
+                        <p><input type="checkbox" id="param-132" value="" /><label for="param-132">МТС</label></p>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <p class="fieldset-title">Цена</p>
+                <div class="range">
+                    <div class="range-fields">
+                        <div class="pseudo-input">
+                            <span class="pseudo-input_placeholder">От</span>
+                            <input type="text" value="" class="pseudo-input_field range-min_input range_inputs" />
+                        </div>
+                        -
+                        <div class="pseudo-input">
+                            <span class="pseudo-input_placeholder">до</span>
+                            <input type="text" value="" class="pseudo-input_field range-max_input range_inputs" />
+                        </div>
+                    </div>
+                    <div class="range-line_wrapper">
+                        <div class="range-line" data-min="549000" data-max="24999000" data-step="1"></div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <div class="js-accordeon">
+                <div class="js-accordeon_body" style="display: none;">
+                    <fieldset>
+                    	<p class="fieldset-title">Технология экрана</p>
+                        <div class="columns-view">
+		                    <div>
+		                        <p><input type="checkbox" id="param-n1" value="" /><label for="param-n1">IPS</label></p>
+		                        <p><input type="checkbox" id="param-n2" value="" /><label for="param-n2">AMOLED</label></p>
+		                        <p><input type="checkbox" id="param-n4" value="" /><label for="param-n4">IPS</label></p>
+		                        <p><input type="checkbox" id="param-n5" value="" /><label for="param-n5">LCD</label></p>
+		                        <p><input type="checkbox" id="param-n6" value="" /><label for="param-n6">LCD IPS</label></p>
+		                    </div>
+		                    <div>
+		                        <p><input type="checkbox" id="param-n8" value="" /><label for="param-n8">PVA</label></p>
+		                        <p><input type="checkbox" id="param-n9" value="" /><label for="param-n9">PVA (SLCD)</label></p>
+		                        <p><input type="checkbox" id="param-n10" value="" /><label for="param-n10">Super LCD 2</label></p>
+		                        <p><input type="checkbox" id="param-n11" value="" /><label for="param-n11">TFT</label></p>
+		                    </div>
+		                </div>
+                    </fieldset>
+                    <fieldset>
+                    	<p class="fieldset-title">Навигация</p>
+                        <div class="columns-view">
+		                    <div style="width: 100%;">
+		                        <p><input type="checkbox" id="param-n1" value="" /><label for="param-n1">A-GPS</label></p>
+		                        <p><input type="checkbox" id="param-n2" value="" /><label for="param-n2">GPS</label></p>
+		                        <p><input type="checkbox" id="param-n4" value="" /><label for="param-n4">ГЛОНАСС</label></p>
+		                        <p><input type="checkbox" id="param-n5" value="" /><label for="param-n5">Цифровой компас</label></p>
+		                    </div>
+		                </div>
+                    </fieldset>
+                    <fieldset>
+		                <p class="fieldset-title">Фронтальная камера (Мп)</p>
+		                <div class="range">
+		                    <div class="range-fields">
+		                        <div class="pseudo-input">
+		                            <span class="pseudo-input_placeholder">От</span>
+		                            <input type="text" value="" class="pseudo-input_field range-min_input range_inputs" />
+		                        </div>
+		                        -
+		                        <div class="pseudo-input">
+		                            <span class="pseudo-input_placeholder">до</span>
+		                            <input type="text" value="" class="pseudo-input_field range-max_input range_inputs" />
+		                        </div>
+		                    </div>
+		                    <div class="range-line_wrapper">
+		                        <div class="range-line" data-min="0" data-max="8" data-step="1"></div>
+		                    </div>
+		                </div>
+		            </fieldset>
+                </div>
+                <a href="" class="js-accordeon_head dotted with-arrow"><span>Расширенный фильтр</span><i></i></a>
+            </div>
+            <div class="btn_cont-padding"></div>
+            <div class="action btn_cont">
+                <input type="submit" value="Применить" class="btn_send" /><input type="submit" value="Отмена" class="btn_close" />
+            </div>
+        </form>
 	</div>
 </body>
 </html>

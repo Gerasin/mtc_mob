@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+    if($('.range').length) {
+        $('.range').css({ 'width' : $(window).width() - 40 })
+    };
+
     // Сортировка
     $('.button-lnk').click(function(){
         if (!$(this).parents('.button-sort').hasClass('active')) {
@@ -89,14 +93,14 @@ $(document).ready(function () {
         return false;
     })
     // Сообщить о появлении
-    $('.availability-no').click(function(){
+    /*$('.availability-no').click(function(){
         $(this).hide();
         $(this).parent('div').find('.availability-ok').show();
     });
     $('.availability-ok').click(function(){
         $(this).hide();
         $(this).parent('div').find('.availability-no').show();
-    });
+    });*/
 
     photoNameHeight();
     $(window).resize(function(){
@@ -135,6 +139,9 @@ $(document).ready(function () {
         $(this).parent('div').find('.phone-detals-open').fadeIn();
         return false;
     });
+    $('.phone-cat-i').each(function(){
+        $(this).find('.payment-info-tab:not(:first)').hide();
+    });
     $('.phone-detals .phone-detals-open a').click(function(){
         var linkClick = $(this).html();
         $(this).parents('.phone-detals-open').find('a').removeClass('active');
@@ -153,6 +160,9 @@ $(document).ready(function () {
         $(this).addClass('active');
         $(this).parents('.payment-info').find('.payment-info-box').html(linkClick);
         $(this).parents('.phone-detals-open').fadeOut();
+        var indexPhone = $(this).parent('p').index();
+        $(this).parents('.phone-info').find('.payment-info-tab').hide();
+        $(this).parents('.phone-info').find('.payment-info-tab').eq(indexPhone).show();
         $('.payment-info-box a').click(function(){
             $(this).parents('.payment-info').find('.phone-detals-open').fadeIn();
             return false;
@@ -231,9 +241,228 @@ $(document).ready(function () {
               onTouch: true
             }
         })
-    }
+    };
 
 
+    // Фильтр
+    //Range-line
+    $.fn.separation = function(){
+        var target = this.text();
+        var re = /(?=\B(?:\d{3})+(?!\d))/g;
+        this.html(target.replace( re, ' ' ));
+    };
+    $.fn.separationInput = function(){
+        var target = this.val();
+        var re = /(?=\B(?:\d{3})+(?!\d))/g;
+        this.val(target.replace( re, ' ' ));
+    };
+    $('.range-line').each(function(){
+        var parents_block = $(this).parents('.range'),
+            range = $(this),
+            min_value = parseInt( $(this).attr('data-min') ),
+            max_value = parseInt( $(this).attr('data-max') ),
+            step = 1,
+            inputs = parents_block.find('.range_inputs'),
+            input_min = parents_block.find('.range-min_input'),
+            input_max = parents_block.find('.range-max_input');
+        if( range.attr('data-step') ) step = parseInt( range.attr('data-step') );
+        range.slider({
+            range: true,
+            min: min_value,
+            max: max_value,
+            step: step,
+            values: [min_value, max_value],
+            slide: function(e, ui) {
+                input_min.val(ui.values[ 0 ]).separationInput();
+                input_max.val(ui.values[ 1 ]).separationInput();
+            }
+        });
+        input_min.val( range.slider("values", 0) ).separationInput();
+        input_max.val( range.slider("values", 1) ).separationInput();
+
+        //Проверка ввода только цифр
+        inputs.bind("change keyup input click", function() {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            }
+        });
+        //Ограничение максимумом и минимумом
+        inputs.bind("change blur", function() {
+            var val = $(this).val().replace(' ', ' ');
+            if ($(this).hasClass('range-min_input')) {
+                if (val == '') val = min_value;
+                val = parseInt(val);
+                max_value = range.slider("values", 1);
+                if (val > max_value) val = max_value;
+                if (val < min_value) val = min_value;
+                $(this).val(val);
+                range.slider("values", 0, val);
+            } else if ($(this).hasClass('range-max_input')) {
+                if (val == '') val = max_value;
+                val = parseInt(val);
+                min_value = range.slider("values", 0);
+                if (val > max_value) val = max_value;
+                if (val < min_value) val = min_value;
+                $(this).val(val);
+                range.slider("values", 1, val);
+            }
+        });
+        inputs.blur(function() {
+            $(this).separationInput();
+        });
+    });
+
+
+    $('#widget').draggable();
+
+    //Accordeon
+    $('.js-accordeon_head').click(function(){
+        var acc_head = $(this),
+            acc_block = acc_head.parents('.js-accordeon'),
+            acc_body = acc_block.find('.js-accordeon_body');
+        if( !acc_head.hasClass('active') ){
+            acc_body.show();
+            acc_block.addClass('active');
+            acc_head.addClass('active');
+        }else{
+            acc_body.hide();
+            acc_block.removeClass('active');
+            acc_head.removeClass('active');
+        }
+        return false;
+    });
+
+
+    $('.button-filt-lnk').click(function(){
+        $('.body').hide();
+        $('.filter_catalog').show();
+        return false;
+    });
+    $('.btn_close').click(function(){
+        $('.body').show();
+        $('.filter_catalog').hide();
+        return false;
+    });
+
+    // Селект расрочки
+    $('.payment-select--h').click(function(){
+        if($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).next('.payment-items').slideUp();
+        } else {
+            $(this).addClass('active');
+            $(this).next('.payment-items').slideDown();
+        };
+        return false;
+    });
+    $('.payment-i').click(function(){
+        $(this).removeClass('active');
+        $(this).parents('.payment-select').find('.payment-items').slideUp();
+        $(this).parents('.payment-select').find('.payment-i').removeClass('active');
+        $(this).addClass('active');
+        var selectAct = $(this).text();
+        $(this).parents('.payment-select').find('.payment-select--h').text(selectAct).removeClass('active');
+        var index = $(this).index();
+        $(this).parents('.condition-item').find('.payment_installments--tab').hide();
+         $(this).parents('.condition-item').find('.payment_installments--tab').eq(index).show();
+        return false;
+    });
+
+    $('.condition-item').each(function(){
+        $(this).find('.payment_installments--tab:not(:first)').hide();
+    })
+    
+
+    // Отзыв
+    $('.other_form--btn').click(function(){
+        var formOther = $('.other_form').offset().top
+        $('html, body').animate({'scrollTop' : formOther});
+        return false;
+    });
+
+    // Маска
+    $(".mask_phone").mask("( 99 ) - 999 - 99 - 99",{placeholder:"( __ ) - ___ - __ - __"});
+
+    // Отметка радио
+    $('.radio_check').change(function(){ 
+        $('.tab_basket').hide();
+        if($('.radio_no_account').prop("checked")) {
+            $('.tab_basket').eq(0).show();
+            console.log('0');
+        } else {
+            console.log('1');
+            $('.tab_basket').eq(1).show();
+        };
+    }); 
+
+    $('.change_lico').change(function(){ 
+        var selectCheck = $(this).find('option:selected').val();
+        $('.select_tabs').hide();
+        $('.select_tabs').eq(selectCheck).show();
+    }); 
+
+    // таб ЛК
+    $('.tab_lk--header a').click(function(){
+        var thisLnk = $(this).parents('.tab_lk--header');
+        if(thisLnk.hasClass('active')) {
+            thisLnk.removeClass('active')
+            thisLnk.next().slideUp();
+        } else {
+            thisLnk.addClass('active');
+            thisLnk.next().slideDown();
+        };
+        return false;
+    });
+
+
+
+    // селект таб для регистрации
+    $('.reg_sel_tab').change(function(){ 
+        var selectCheck = $(this).find('option:selected').val();
+        $('.form-box_tab').hide();
+        $('.form-box_tab').eq(selectCheck).show();
+    }); 
+    $('.form-box_tab:not(:first)').hide();
+
+    // Удаление товара
+    $('.phone-cat-i .phone-close').on( "click", function() {
+        $(this).parents('.phone-cat-i').fadeOut();
+        return false;
+    });
+
+
+    // Редактирование адреса 
+    $('.adress_edit').on( "click", function() {
+        var scrollForm = $('#adress_form').offset().top;
+        $('html, body').animate({'scrollTop' : scrollForm});
+        return false;
+    });
+
+    // Удаление адреса
+    $('.adress_lk .phone-close').on( "click", function() {
+        $(this).parents('.adress_lk').fadeOut();
+        return false;
+    });
+
+
+    if($('.fancybox').length) {
+        $(".fancybox").fancybox({
+            padding : 0
+        });
+    };
+    $('.phone-lnk_all a').on( "click", function() {
+        $(this).parent().next('.phone_all').slideToggle();
+        return false;
+    });
+
+
+    $('.arhive_open').on( "click", function() {
+        $(this).next('ol').slideToggle();
+        return false;
+    });
+
+   
+    
 
     
 });

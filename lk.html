@@ -51,8 +51,10 @@
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
@@ -60,15 +62,431 @@
 				Личный кабинет
 			</div>
 			<div class="h2">Личный кабинет</div>
-			<div class="menu">
-				<ul>
-					<li><a href="">Мои данные <em class="ico-pointer"></em></a></li>
-					<li><a href="">Адреса доставки <em class="ico-pointer"></em></a></li>
-					<li><a href="">Заказы <em class="ico-pointer"></em></a></li>
-					<li><a href="">Бонусы <em class="ico-pointer"></em></a></li>
-					<li><a href="">Избранное <em class="ico-pointer"></em></a></li>
-				</ul>
-			</div><!-- END menu -->
+
+			<div class="tab_lk">
+				<div class="tab_lk--header">
+					<a href="">Мои данные <em class="ico-pointer"></em></a>
+				</div>
+				<div class="tab_lk--cont">
+					<div class="text-page-bg">
+						<p>В этом разделе вы можете изменить ваши данные, изменить пароль, а также подписаться/отписаться от рассылки.</p>
+						<form action="">
+							<div class="form-page">
+								<div class="form-box">
+									<fieldset>
+										<label for="id-1">ФИО <em class="important" >*</em></label>
+										<input id="id-1" type="text" value="Иванов Иван Иванович">
+									</fieldset>
+								</div>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-2">Дата рождения <em class="important" >*</em></label>
+										<div class="date-select-1 select-wrapper big-size">
+											<select>
+												<option value="">12</option>
+											</select>
+										</div>
+										<div class="date-select-2 select-wrapper big-size">
+											<select>
+												<option value="">Сентября</option>
+											</select>
+										</div>
+										<div class="date-select-3 select-wrapper big-size">
+											<select>
+												<option value="">1988</option>
+											</select>
+										</div>
+										<div class="clear"></div>
+									</fieldset>
+								</div>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-3">Электроная почта <em class="important" >*</em></label>
+										<input id="id-3" type="text" value="mail_ex@gmail.com">
+									</fieldset>
+								</div>
+								<div class="form-box-check checkbox">
+									<input type="checkbox" id="id-check">
+									<label for="id-check">Получать анонсы и обзоры материалов на указанную электронную почту</label>
+								</div>
+								<h3>Смена пароля</h3>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-8">Текущий пароль <em class="important">*</em></label>
+										<input id="id-8" type="password" value="">
+									</fieldset>
+								</div>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-9">Новый пароль <em class="important">*</em></label>
+										<input id="id-9" type="password" value="">
+									</fieldset>
+								</div>
+								<div class="form-button"><a href="" class="button-style">Сохранить изменения</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="tab_lk--header">
+					<a href="">Адреса доставки <em class="ico-pointer"></em></a>
+				</div>
+				<div class="tab_lk--cont">
+					<div class="text-page-bg checkbox">
+						<div class="adress_lk">
+							<a href="" class="phone-close"></a>
+							<input type="radio" name="radio3" id="id-radio-01" checked>
+							<label for="id-radio-01" >Адрес 1 <a href="" class="adress_edit">Изменить</a></label>
+							<div class="form-box-contacts dost_txt">
+								<p>Минская область, <br>
+								Минск, ул. Короля 29, корп. 2, кв. 105<br>
+								Иван<br>
+								+375 29 123-45-67<br>
+								ivandurak@mts.by</p>
+							</div>
+							<p></p>
+						</div>
+						<div class="adress_lk">
+							<a href="" class="phone-close"></a>
+							<input type="radio" name="radio3" id="id-radio-02">
+							<label for="id-radio-02" >Адрес 2 <a href="" class="adress_edit">Изменить</a></label>
+							<div class="form-box-contacts dost_txt">
+								<p>Минская область, <br>
+								Минск, ул. Короля 29, корп. 2, кв. 105<br>
+								Иван<br>
+								+375 29 123-45-67<br>
+								ivandurak@mts.by</p>
+							</div>
+						</div>
+
+						<div id="adress_form"></div>
+						<h3>Добавить адрес</h3>
+						<div class="form-box">
+							<fieldset>
+								<label for="id-11">Ф.И.О. <em class="important" >*</em></label>
+								<input id="id-11" type="text" value="" placeholder="Иванов Иван Иванович">
+							</fieldset>
+						</div>
+
+						<div class="form-box">
+							<fieldset>
+								<label for="id-4">Контактный телефон <em class="important" >*</em></label>
+								<div class="form-box-phone">
+									<div class="form-box-phone-code">+375</div>
+									<input id="id-4" type="text" value="" class="mask_phone" placeholder="( __ ) - ___ - __ - __" >
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="form-box form-box-col">
+							<fieldset>
+								<label for="id-5">Адрес <em class="important" >*</em></label>
+								<div class="width_50">
+									<div class="select-wrapper big-size">
+										<select>
+											<option value="">Область</option>
+										</select>
+									</div>
+								</div>
+								<div class="width_50_last">
+									<div class="select-wrapper big-size">
+										<select>
+											<option value="">Город</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="width_50">
+									<input id="id-11" type="text" value="" placeholder="Улица">
+								</div>
+								<div class="width_50_last">
+									<input id="id-11" type="text" value="" placeholder="Дом">
+								</div>
+
+								<div class="width_50">
+									<input id="id-11" type="text" value="" placeholder="Корпус">
+								</div>
+								<div class="width_50_last">
+									<input id="id-11" type="text" value="" placeholder="Квартира">
+								</div>
+
+								<div class="width_50">
+									<input id="id-11" type="text" value="" placeholder="Индекс">
+								</div>
+							</fieldset>
+						</div>
+						<div class="form-lnk-save"><a href="">Сохранить адрес</a></div>
+					</div>
+				</div>
+
+				<div class="tab_lk--header">
+					<a href="">Заказы <em class="ico-pointer"></em></a>
+				</div>
+				<div class="tab_lk--cont">
+					<div class="text-page-bg">
+						<div class="order-sost">Принят</div>
+						<div class="order-header">
+							<h3>Текущий заказ № 29412</h3>
+							<h4>Оформлен 11 марта 2015 в 12:34</h4>
+						</div>
+						<div class="order-catalog">
+							<div class="order-catalog-i">
+								<a href="">
+									<img src="img/tovar/phone-1.png" alt=""><br>
+									Alcatel ONETOUCH M'Pop (5020X) черный
+								</a>
+							</div>
+							<div class="order-catalog-i">
+								<a href="">
+									<img src="img/tovar/phone-2.png" alt=""><br>
+									Samsung i9070 Galaxy S Advance
+								</a>
+							</div>
+							<div class="order-catalog-i">
+								<a href="">
+									<img src="img/tovar/phone-3.png" alt=""><br>
+									Samsung i9070 Galaxy S Advance
+								</a>
+							</div>
+						</div>
+						<h3>Регион и город</h3>
+						<p>Минск, Минская область</p>
+						<h3>Доставка курьерской службой</h3>
+						<p>Иванов Сергей Петрович <br>
+						+375 (29) 231-13-13 <br>
+						ул. Кнорина, д. 8, кв. 51, 220113</p>
+						<h3>Оплата</h3>
+						<p>Банковской картой</p>
+						<h3>Комментарий к заказу</h3>
+						<p>В подъезде сломан домофон</p>
+						<div class="order-total">
+							<h3>Сумма заказа: 24 798 100 <span>руб.</span></h3>
+							<h3>Доставка: 8 000 <span>руб.</span></h3>
+							<h3><em>Общая сумма:</em> 24 798 100 руб.</h3>
+						</div>
+						<div class="total-pay-button"><a href="" class="button-style">Оплатить</a></div>
+					</div>
+					<h3>Какие документы вы получаете вместе с товаром</h3>
+					<div class="condition">
+						<div class="condition-item order-arhive">
+							<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
+							<div class="condition-h">
+								Заказ № 41234 <span>(Закрыт)</span>
+								<p>Оформлен 11 марта 2015 в 12:34</p>
+							</div>
+							<div class="condition-cont">
+								<div class="order-catalog">
+									<div class="order-catalog-i">
+										<a href="">
+											<img src="img/tovar/phone-1.png" alt=""><br>
+											Alcatel ONETOUCH M'Pop (5020X) черный
+										</a>
+									</div>
+								</div>
+								<h3>Регион и город</h3>
+								<p>Минск, Минская область</p>
+								<h3>Доставка курьерской службой</h3>
+								<p>Иванов Сергей Петрович <br>
+								+375 (29) 231-13-13 <br>
+								ул. Кнорина, д. 8, кв. 51, 220113</p>
+								<h3>Оплата</h3>
+								<p>Банковской картой</p>
+								<h3>Комментарий к заказу</h3>
+								<p>В подъезде сломан домофон</p>
+								<div class="order-total">
+									<h3>Сумма заказа: 24 798 100 <span>руб.</span></h3>
+									<h3>Доставка: 8 000 <span>руб.</span></h3>
+									<h3><em>Общая сумма:</em> 24 798 100 руб.</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="condition">
+						<div class="condition-item order-arhive">
+							<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
+							<div class="condition-h">
+								Заказ № 41234 <span>(Закрыт)</span>
+								<p>Оформлен 11 марта 2015 в 12:34</p>
+							</div>
+							<div class="condition-cont">
+								<div class="order-catalog">
+									<div class="order-catalog-i">
+										<a href="">
+											<img src="img/tovar/phone-1.png" alt=""><br>
+											Alcatel ONETOUCH M'Pop (5020X) черный
+										</a>
+									</div>
+								</div>
+								<h3>Регион и город</h3>
+								<p>Минск, Минская область</p>
+								<h3>Доставка курьерской службой</h3>
+								<p>Иванов Сергей Петрович <br>
+								+375 (29) 231-13-13 <br>
+								ул. Кнорина, д. 8, кв. 51, 220113</p>
+								<h3>Оплата</h3>
+								<p>Банковской картой</p>
+								<h3>Комментарий к заказу</h3>
+								<p>В подъезде сломан домофон</p>
+								<div class="order-total">
+									<h3>Сумма заказа: 24 798 100 <span>руб.</span></h3>
+									<h3>Доставка: 8 000 <span>руб.</span></h3>
+									<h3><em>Общая сумма:</em> 24 798 100 руб.</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="condition">
+						<div class="condition-item order-arhive">
+							<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
+							<div class="condition-h">
+								Заказ № 41234 <span>(Отменен)</span>
+								<p>Оформлен 11 марта 2015 в 12:34</p>
+							</div>
+							<div class="condition-cont">
+								<div class="order-catalog">
+									<div class="order-catalog-i">
+										<a href="">
+											<img src="img/tovar/phone-1.png" alt=""><br>
+											Alcatel ONETOUCH M'Pop (5020X) черный
+										</a>
+									</div>
+								</div>
+								<h3>Регион и город</h3>
+								<p>Минск, Минская область</p>
+								<h3>Доставка курьерской службой</h3>
+								<p>Иванов Сергей Петрович <br>
+								+375 (29) 231-13-13 <br>
+								ул. Кнорина, д. 8, кв. 51, 220113</p>
+								<h3>Оплата</h3>
+								<p>Банковской картой</p>
+								<h3>Комментарий к заказу</h3>
+								<p>В подъезде сломан домофон</p>
+								<div class="order-total">
+									<h3>Сумма заказа: 24 798 100 <span>руб.</span></h3>
+									<h3>Доставка: 8 000 <span>руб.</span></h3>
+									<h3><em>Общая сумма:</em> 24 798 100 руб.</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab_lk--header">
+					<a href="">Избранное <em class="ico-pointer"></em></a>
+				</div>
+				<div class="tab_lk--cont">
+					<div class="phone-cat">
+						<div class="phone-cat-i">
+							<div class="phone-header"><a href="">Alcatel ONETOUCH M'Pop (5020X) черный <em class="ico-pointer"></em></a></div>
+							<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a><div class="stiker pre_order">в наличии</div></div>
+							<div class="phone-info">
+								<a href="" class="phone-close"></a>
+								<div class="phone-detals">
+									<a href="" class="phone-detals-lnk">16 Гб</a>
+									<div class="phone-detals-open">
+										<p><a href="">8 Гб</a></p>
+										<p><a href="" class="active">16 Гб</a></p>
+										<p><a href="">32 Гб</a></p>
+									</div>
+								</div>
+								<div class="phone-detals">
+									<a href="" class="phone-detals-lnk">Белый</a>
+									<div class="phone-detals-open">
+										<p><a href="" class="active">Белый</a></p>
+										<p><a href="">Черный</a></p>
+										<p><a href="">Серый</a></p>
+									</div>
+								</div>
+								<p class="tovar-padding"></p>
+								<p>
+									Стоимость
+									<span class="pay-box">2 500 000 <em>руб.</em></span>
+								</p>
+								<a href="" class="tovar-buuton button-style">Купить</a>
+								<div class="srovneniyu">
+									<div class="srovneniyu-no"><img src="img/ico/srovneniyu-no.png" alt=""><span>Сравнить</span></img></div>
+									<div class="srovneniyu-ok"><img src="img/ico/srovneniyu-ok.png" alt=""><span>В сравнении</span></img></div>
+								</div>
+							</div>
+						</div>
+						<div class="phone-cat-i">
+							<div class="phone-header"><a href="">Samsung i9070 Galaxy S Advance <em class="ico-pointer"></em></a></div>
+							<div class="phone-img"><a href=""><img src="img/tovar/phone-3.png" alt=""></a></div>
+							<div class="phone-info">
+								<a href="" class="phone-close"></a>
+								<div class="phone-detals">
+									<a href="" class="phone-detals-lnk">8 Гб</a>
+									<div class="phone-detals-open">
+										<p><a href="" class="active">8 Гб</a></p>
+										<p><a href="">16 Гб</a></p>
+										<p><a href="">32 Гб</a></p>
+									</div>
+								</div>
+								<div class="phone-detals">
+									<a href="" class="phone-detals-lnk">Белый</a>
+									<div class="phone-detals-open">
+										<p><a href="" class="active">Белый</a></p>
+										<p><a href="">Черный</a></p>
+										<p><a href="">Серый</a></p>
+									</div>
+								</div>
+								<p class="tovar-padding"></p>
+								<div class="tovar-buuton-none">
+									Нет в <br> наличии
+								</div>
+								<div class="srovneniyu">
+									<div class="srovneniyu-no"><img src="img/ico/srovneniyu-no.png" alt=""><span>Сравнить</span></img></div>
+									<div class="srovneniyu-ok"><img src="img/ico/srovneniyu-ok.png" alt=""><span>В сравнении</span></img></div>
+								</div>
+							</div>
+						</div>
+						<div class="phone-cat-i">
+							<div class="phone-header"><a href="">Alcatel ONETOUCH M'Pop (5020X) черный <em class="ico-pointer"></em></a></div>
+							<div class="phone-img"><a href=""><img src="img/tovar/phone-1.png" alt=""></a></div>
+							<div class="phone-info">
+								<a href="" class="phone-close"></a>
+								<div class="phone-detals">
+									<a href="" class="phone-detals-lnk">16 Гб</a>
+									<div class="phone-detals-open">
+										<p><a href="">8 Гб</a></p>
+										<p><a href="" class="active">16 Гб</a></p>
+										<p><a href="">32 Гб</a></p>
+									</div>
+								</div>
+								<div class="phone-detals">
+									<a href="" class="phone-detals-lnk">Белый</a>
+									<div class="phone-detals-open">
+										<p><a href="" class="active">Белый</a></p>
+										<p><a href="">Черный</a></p>
+										<p><a href="">Серый</a></p>
+									</div>
+								</div>
+								<p class="tovar-padding"></p>
+								<p>
+									Стоимость
+									<span class="pay-box">2 500 000 <em>руб.</em></span>
+								</p>
+								<a href="" class="tovar-buuton button-style">Купить</a>
+								<div class="srovneniyu">
+									<div class="srovneniyu-no"><img src="img/ico/srovneniyu-no.png" alt=""><span>Сравнить</span></img></div>
+									<div class="srovneniyu-ok"><img src="img/ico/srovneniyu-ok.png" alt=""><span>В сравнении</span></img></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pager-lnk">
+						<span class="pager-lnk-l"><img src="img/ico/pointer-l.png" alt=""><a href="">Назад</a></span>
+						<span class="pager-lnk-r"><a href="">Вперед</a><img src="img/ico/pointer-r.png" alt=""></span>
+						<span class="pager-lnk-c">
+							<a href="">1</a>
+							<a href="">2</a>
+							<a href="">3</a>
+							<a href="">4</a>
+							<a href="">5</a>
+						</span>
+					</div>
+				</div>
+			</div>
 			<div class="contacs">
 				<div class="contacs-phone">+375 29 545-00-00</div>
 				Бесплатно для абонентов МТС

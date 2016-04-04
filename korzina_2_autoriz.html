@@ -47,77 +47,94 @@
 		<div class="head">
 			<div class="logo"><img src="img/logo.png" alt=""></div>
 			<div class="menu-open"><a href=""><img src="img/ico/menu-open.png" alt=""></a></div>
-			<div class="basket-ico"><a href=""><img src="img/ico/basket.png" alt=""></a></div>
+			<div class="basket-ico active"><a href=""><img src="img/ico/basket.png" alt=""><span>3</span></a></div>
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
 				<span><img src="img/ico/crubs.png" alt=""></span>
-				<a href="">Личный кабинет</a>
-				<span><img src="img/ico/crubs.png" alt=""></span>
-				Личные данные
+				Корзина
 			</div>
-			<div class="h2">Личные данные</div>
-			<div class="lk-back"><img src="img/ico/pointer-l.png" alt=""> <a href="">Вернуться в личный кабинет</a></div>
-			<div class="text-page-bg">
-				<p>В этом разделе вы можете изменить ваши данные, изменить пароль, а также подписаться/отписаться от рассылки.</p>
-				<div class="form-page">
-					<div class="form-box">
-						<fieldset>
-							<label for="id-1">ФИО <em class="important" >*</em></label>
-							<input id="id-1" type="text" value="Иванов Иван Иванович">
-						</fieldset>
+			<div class="h2">Способ доставки</div>
+			<div class="basket-crubs">
+				<span class="cr_ok">1 <img src="img/ico/cr_ok.png" alt=""></span>
+				<img src="img/ico/pointer_cr.png" class="pointer_cr" alt="">
+				<span class="active">2</span>
+				<img src="img/ico/pointer_cr.png" class="pointer_cr" alt="">
+				<span>3</span>
+				<img src="img/ico/pointer_cr.png" class="pointer_cr" alt="">
+				<span>4</span>
+			</div>
+			<div class="text-page">
+				<form action="">
+					<div class="phone-cat phone-cat-basket">
+						<div class="basket-form">
+							<p></p>
+							<form action="">
+								<div class="form-box-check checkbox adress-check">
+									<input type="radio" name="radio" id="id-radio-1" checked>
+									<label for="id-radio-1">Курьерская служба по Минску</label>
+									<div class="form-box-contacts dost_txt">
+										<p>Бесплатная, при заказе от 1 000 000 руб.</p>
+									</div>
+									<p></p>
+									<input type="radio" name="radio" id="id-radio-15">
+									<label for="id-radio-15">Курьерская служба по Беларуси</label>
+									<div class="form-box-contacts dost_txt">
+										<p>Стоимость доставки по Беларуси 69 000 руб., срок доставки — до 3 дней</p>
+									</div>
+									<p></p>
+									<input type="radio" name="radio" id="id-radio-2">
+									<label for="id-radio-2">VIP-доставка по Минску при заказе с 09:00 до 17:00</label>
+									<div class="form-box-contacts dost_txt">
+										<p>Стоимость доставки 150 000. Заказ доставляется в течение 2 часов с момента оформления заказа</p>
+									</div>
+									<p></p>
+									<input type="radio" name="radio" id="id-radio-3">
+									<label for="id-radio-3">Самовывоз</label>
+									<div class="form-box-contacts dost_txt">
+										<p>До 19:00 ежедневно по адресу пр-т Независимости 95</p>
+									</div>
+									<div class="dost_tx--border"></div>
+									<input type="radio" name="radio3" id="id-radio-01" checked>
+									<label for="id-radio-01" >Адрес 1</label>
+									<div class="form-box-contacts dost_txt">
+										<p>Минская область, <br>
+										Минск, ул. Короля 29, корп. 2, кв. 105<br>
+										Иван<br>
+										+375 29 123-45-67<br>
+										ivandurak@mts.by</p>
+									</div>
+									<p></p>
+									<input type="radio" name="radio3" id="id-radio-02">
+									<label for="id-radio-02" >Адрес 2</label>
+									<div class="form-box-contacts dost_txt">
+										<p>Минская область, <br>
+										Минск, ул. Короля 29, корп. 2, кв. 105<br>
+										Иван<br>
+										+375 29 123-45-67<br>
+										ivandurak@mts.by</p>
+									</div>
+
+									<div class="dost_tx--border border-footer"></div>
+								</div>
+							</form>
+						</div>
+						<div class="summ_result">
+							<div class="total-pay">Сумма заказа: 19 785 300 руб.</div>
+							<div class="total-pay">Доставка: 35 000 руб.</div>
+							<div class="total-pay">Итого: <span class="size_big">924 798 100</span> руб.</div>
+						</div>
+						<div class="total-pay-button"><input type="submit" class="button-style" value="Выбрать способ оплаты"></div>
+						<div class="link-back"><img src="img/ico/pointer-l.png" alt=""> <a href="">Вернуться к покупкам</a></div>
 					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-2">Дата рождения <em class="important" >*</em></label>
-							<div class="date-select-1 select-wrapper big-size">
-								<select>
-									<option value="">12</option>
-								</select>
-							</div>
-							<div class="date-select-2 select-wrapper big-size">
-								<select>
-									<option value="">Сентября</option>
-								</select>
-							</div>
-							<div class="date-select-3 select-wrapper big-size">
-								<select>
-									<option value="">1988</option>
-								</select>
-							</div>
-							<div class="clear"></div>
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-3">Электроная почта <em class="important" >*</em></label>
-							<input id="id-3" type="text" value="mail_ex@gmail.com">
-						</fieldset>
-					</div>
-					<div class="form-box-check checkbox">
-						<input type="checkbox" id="id-check">
-						<label for="id-check">Получать анонсы и обзоры материалов на указанную электронную почту</label>
-					</div>
-					<h3>Смена пароля</h3>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-8">Текущий пароль <em class="important">*</em></label>
-							<input id="id-8" type="password" value="">
-						</fieldset>
-					</div>
-					<div class="form-box">
-						<fieldset>
-							<label for="id-9">Новый пароль <em class="important">*</em></label>
-							<input id="id-9" type="password" value="">
-						</fieldset>
-					</div>
-					<div class="form-button"><a href="" class="button-style">Сохранить изменения</a></div>
-				</div>
+				</form>
 			</div>
 			<div class="contacs">
 				<div class="contacs-phone">+375 29 545-00-00</div>
@@ -153,6 +170,10 @@
 	    	</ul>
 	    </div><!-- END footer -->
 	</div><!-- END body -->
+	<div class="srovneniyu-lnk">
+		<a href="" class="srovneniyu-close"></a>
+		<img src="img/ico/srovneniyu-white.png" alt=""><a href="">Сравнить <span>2</span> товара</a>
+	</div>
 </body>
 </html>
 

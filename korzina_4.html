@@ -47,90 +47,73 @@
 		<div class="head">
 			<div class="logo"><img src="img/logo.png" alt=""></div>
 			<div class="menu-open"><a href=""><img src="img/ico/menu-open.png" alt=""></a></div>
-			<div class="basket-ico"><a href=""><img src="img/ico/basket.png" alt=""></a></div>
+			<div class="basket-ico active"><a href=""><img src="img/ico/basket.png" alt=""><span>3</span></a></div>
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
 				<span><img src="img/ico/crubs.png" alt=""></span>
-				<a href="">Личный кабинет</a>
-				<span><img src="img/ico/crubs.png" alt=""></span>
-				Адреса дрставки
+				Корзина
 			</div>
-			<div class="h2">Адреса дрставки</div>
-			<div class="lk-back"><img src="img/ico/pointer-l.png" alt=""> <a href="">Вернуться в личный кабинет</a></div>
-			<div class="text-page-bg">
-				<ul class="lk-adres">
-					<li>
-						<a href="" class="lk-adres-close"></a>
-						<h3>Адрес 1</h3> 
-						<p>Минск, Минская область, ул. Кнорина, д. 8, кв. 51, 220113</p>
-						<p>Иванов Сергей Петрович <br>
-						+375 (29) 231-13-13</p>
-						<p><a href="">Изменить</a></p>
-					</li>
-					<li>
-						<a href="" class="lk-adres-close"></a>
-						<h3>Адрес 2</h3> 
-						<p>Минск, Минская область, ул. Кнорина, д. 8, кв. 51, 220113</p>
-						<p>Иванов Сергей Петрович <br>
-						+375 (29) 231-13-13</p>
-						<p><a href="">Изменить</a></p>
-					</li>
-					<li>
-						<a href="" class="lk-adres-close"></a>
-						<h3>Адрес 3</h3> 
-						<p>Минск, Минская область, ул. Кнорина, д. 8, кв. 51, 220113</p>
-						<p>Иванов Сергей Петрович <br>
-						+375 (29) 231-13-13</p>
-						<p><a href="">Изменить</a></p>
-					</li>
-				</ul>
-				<h3>Добавить адрес</h3>
-				<div class="form-box">
-					<fieldset>
-						<label for="id-1">ФИО <em class="important" >*</em></label>
-						<input id="id-1" type="text" value="">
-					</fieldset>
-				</div>
-				<div class="form-box">
-					<fieldset>
-						<label for="id-2">Регион и город <em class="important" >*</em></label>
-						<input id="id-2" type="text" value="">
-					</fieldset>
-				</div>
-				<div class="form-box">
-					<fieldset>
-						<label for="id-3">Улица <em class="important" >*</em></label>
-						<input id="id-3" type="text" value="">
-					</fieldset>
-				</div>
-				<div class="form-box">
-					<fieldset>
-						<label for="id-4">Дом <em class="important">*</em>, корпус, квартира <em class="important">*</em></label>
-						<input id="id-4" type="text" value="">
-					</fieldset>
-				</div>
-				<div class="form-box">
-					<fieldset>
-						<label for="id-5">Индекс <em class="important">*</em></label>
-						<input id="id-5" type="text" value="">
-					</fieldset>
-				</div>
-				<div class="form-box">
-					<fieldset>
-						<label for="id-6">Контактный телефон <em class="important">*</em></label>
-						<div class="form-box-phone">
-							<div class="form-box-phone-code">+375</div>
-							<input id="id-6" type="text" value="">
+			<div class="h2">Способ доставки</div>
+			<div class="basket-crubs">
+				<span class="cr_ok">1 <img src="img/ico/cr_ok.png" alt=""></span>
+				<img src="img/ico/pointer_cr.png" class="pointer_cr" alt="">
+				<span class="active">2</span>
+				<img src="img/ico/pointer_cr.png" class="pointer_cr" alt="">
+				<span>3</span>
+				<img src="img/ico/pointer_cr.png" class="pointer_cr" alt="">
+				<span>4</span>
+			</div>
+			<div class="text-page">
+				<div class="phone-cat phone-cat-basket">
+					<div class="basket-form basket-form_text">
+						<h2>Список покупок <a href="" class="lnk_edit">Изменить</a></h2>
+						<p></p>
+						<table class="basket_table">
+							<tr>
+								<td><img src="img/tovar/phone-1.png" alt=""></td>
+								<th>Samsung Galaxy K Zoom SM-C115 Black</th>
+							</tr>
+							<tr>
+								<td><img src="img/tovar/phone-1.png" alt=""></td>
+								<th>Samsung Galaxy K Zoom SM-C115 Black</th>
+							</tr>
+							<tr>
+								<td><img src="img/tovar/phone-1.png" alt=""></td>
+								<th>Samsung Galaxy K Zoom SM-C115 Black</th>
+							</tr>
+						</table>
+						<div class="dost_tx--border"></div>
+						<h2>Доставка <a href="" class="lnk_edit">Изменить</a></h2>
+						<div class="form_text">
+							<p>Курьерской службой</p>
+							<p>Минск, Минская область</p>
+							<p>Иванов Сергей Петрович <br>
+							+375 (29) 545−00−00<br>
+							ул. Ольховская, д. 29, д. 8, кв. 620</p>
 						</div>
-					</fieldset>
+						<div class="dost_tx--border"></div>
+						<h2>Оплата</h2>
+						<div class="form_text">
+							<p>Банковской картой онлайн</p>
+						</div>
+						<div class="dost_tx--border border-footer"></div>
+					</div>
+					<div class="summ_result">
+						<div class="total-pay">Сумма заказа: 19 785 300 руб.</div>
+						<div class="total-pay">Доставка: 35 000 руб.</div>
+						<div class="total-pay">Итого: <span class="size_big">924 798 100</span> руб.</div>
+					</div>
+					<div class="total-pay-button"><a href="" class="button-style">К подтверждению заказа</a></div>
+					<div class="link-back"><img src="img/ico/pointer-l.png" alt=""> <a href="">Вернуться к покупкам</a></div>
 				</div>
-				<div class="form-lnk-save"><a href="">Сохранить адрес</a></div>
 			</div>
 			<div class="contacs">
 				<div class="contacs-phone">+375 29 545-00-00</div>
@@ -166,6 +149,10 @@
 	    	</ul>
 	    </div><!-- END footer -->
 	</div><!-- END body -->
+	<div class="srovneniyu-lnk">
+		<a href="" class="srovneniyu-close"></a>
+		<img src="img/ico/srovneniyu-white.png" alt=""><a href="">Сравнить <span>2</span> товара</a>
+	</div>
 </body>
 </html>
 

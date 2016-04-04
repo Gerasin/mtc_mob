@@ -51,8 +51,10 @@
 		</div><!-- END head -->
 		<div class="content content-inner">
 			<div class="searc-main">
-				<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
-				<input name="s" type="submit" value=" ">
+				<form action="">
+					<input type="text" name="q" value="" size="15" maxlength="50" placeholder="Поиск по сайту">
+					<input name="s" type="submit" value=" ">
+				</form>
 			</div>
 			<div class="crubs">
 				<a href=""><img src="img/ico/ico-main.png" alt=""></a> 
@@ -84,50 +86,52 @@
 						</div>
 					</div>
 				</div>
-				<div class="condition">
-					<div class="condition-item">
-						<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
-						<div class="condition-h">
-							Ваши данные
+				<form action="">
+					<div class="condition">
+						<div class="condition-item">
+							<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
+							<div class="condition-h">
+								Ваши данные
+							</div>
+							<div class="condition-cont">
+								<p>Заполните поля и мы оповестим вас, как только товар появится в магазине</p>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-1">Имя <em class="important" >*</em></label>
+										<input id="id-1" type="text" value="">
+									</fieldset>
+								</div>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-1">Телефон <em class="important" >*</em></label>
+										<input id="id-1" type="text" value="">
+									</fieldset>
+								</div>
+								<div class="form-box">
+									<fieldset>
+										<label for="id-1">Электронная почта <em class="important" >*</em></label>
+										<input id="id-1" type="text" value="">
+									</fieldset>
+								</div>
+							</div>
 						</div>
-						<div class="condition-cont">
-							<p>Заполните поля и мы оповестим вас, как только товар появится в магазине</p>
-							<div class="form-box">
-								<fieldset>
-									<label for="id-1">Имя <em class="important" >*</em></label>
-									<input id="id-1" type="text" value="">
-								</fieldset>
+						<div class="condition-item">
+							<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
+							<div class="condition-h">
+								Комментарий
 							</div>
-							<div class="form-box">
-								<fieldset>
-									<label for="id-1">Телефон <em class="important" >*</em></label>
-									<input id="id-1" type="text" value="">
-								</fieldset>
-							</div>
-							<div class="form-box">
-								<fieldset>
-									<label for="id-1">Электронная почта <em class="important" >*</em></label>
-									<input id="id-1" type="text" value="">
-								</fieldset>
+							<div class="condition-cont">
+								<p></p>
+								<div class="form-box">
+									<fieldset>
+										<textarea name="" id="" cols="30" rows="10" placeholder="Введите сообщение"></textarea>
+									</fieldset>
+								</div>
 							</div>
 						</div>
+						<div class="next-order-button"><input type="submit" class="button-style" value="Отправить заявку"></div>
 					</div>
-					<div class="condition-item">
-						<div class="condition-item-img"><img src="img/ico/plus.gif" class="ico-plus" alt=""><img src="img/ico/minus.gif" class="ico-minus" alt=""></div>
-						<div class="condition-h">
-							Способ доствки
-						</div>
-						<div class="condition-cont">
-							<p></p>
-							<div class="form-box">
-								<fieldset>
-									<textarea name="" id="" cols="30" rows="10" placeholder="Введите сообщение"></textarea>
-								</fieldset>
-							</div>
-						</div>
-					</div>
-					<div class="next-order-button"><a href="" class="button-style">Отправить заявку</a></div>
-				</div>
+				</form>
 			</div>
 			<div class="contacs">
 				<div class="contacs-phone">+375 29 545-00-00</div>
