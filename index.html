@@ -32,8 +32,8 @@
 		};
 	</script> -->
 
-	 <meta name="apple-itunes-app" content="app-id=979883510">
-    <meta name="google-play-app" content="app-id=by.mts.client">
+	 <meta name="apple-itunes-app" content="app-id=1124026991">
+    <meta name="google-play-app" content="app-id=by.mts.money">
     <meta name="msApplication-ID" content="App" />
 
     <link rel="stylesheet" href="css/jquery.smartbanner.css" type="text/css" media="screen">
@@ -66,7 +66,14 @@
     <script src="js/jquery.smartbanner.js"></script>
     <script>
       $(function() {
-        $.smartbanner({ daysHidden: 0, daysReminder: 0, title: 'Мой МТС (Беларусь)', author: 'Mobile TeleSystems JLLC', button: 'Скачать' });
+        $.smartbanner({ 
+        	daysHidden: 0, 
+        	daysReminder: 0, 
+        	title: 'МТС Деньги', 
+        	author: 'Mobile TeleSystems JLLC', 
+        	button: 'Скачать',
+        	force: 'ios',
+        	url:  'http://dengi.mts.by/app'});
       });
     </script>
 
